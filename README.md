@@ -16,10 +16,10 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 
 ## 官方
 
-* [官网PC站](http://www.igola.com) (http://www.igola.com)
-* [官网m站](http://m.igola.com) (http://m.igola.com)
-* [海外PC站](http://www.igola.world) (http://www.igola.world)
-* [海外m站](http://mobile.igola.world) (http://mobile.igola.world)
+* [官网PC站](https://www.igola.com) (https://www.igola.com)
+* [官网m站](https://m.igola.com) (https://m.igola.com)
+* [海外PC站](https://www.igola.world) (https://www.igola.world)
+* [海外m站](https://mobile.igola.world) (https://mobile.igola.world)
 * 微信公众号
 
 ![](https://content.igola.com/static/COMMON/images/igola_weixin_qrcode_new.jpg)
