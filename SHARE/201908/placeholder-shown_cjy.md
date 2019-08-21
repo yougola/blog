@@ -16,6 +16,7 @@ Material Design风格占位符交互效果官方示意见此[demo](https://mater
 纯CSS实现，要比JS实现好一千倍，代码少，性能高，样式调整方便，上手简单容易，可谓是前端必备技能了。
 
 ### 三、实现原理
+[jsbin 编辑链接](https://jsbin.com/jisidoqazi/edit?html,css,output)
 拿一个输入框举例，HTML结构如下：
 ```
 <div class="input-fill-box">
