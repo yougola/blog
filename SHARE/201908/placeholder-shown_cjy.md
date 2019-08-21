@@ -17,15 +17,16 @@ Material Design风格占位符交互效果官方示意见此[demo](https://mater
 
 ### 三、实现原理
 拿一个输入框举例，HTML结构如下：
-[
+```
 <div class="input-fill-box">
     <input class="input-fill" placeholder="邮箱">
     <label class="input-label">邮箱</label>
 </div>
-]
+```
 首先，让浏览器默认的placeholder效果不可见，我们可以让颜色透明即可，如下CSS：
 
 /* 默认placeholder颜色透明不可见 */
+```
 .input-fill:placeholder-shown::placeholder {
     color: transparent;
 }
@@ -52,7 +53,9 @@ Material Design风格占位符交互效果官方示意见此[demo](https://mater
    padding: 0 2px;
     transform-origin: 0 0;
 }
+```
 最后，对这个label元素在输入框focus时候，以及非placeholder显示的时候进行重定位（缩小并位移到上方）：
+```
 .input-fill:not(:placeholder-shown) ~ .input-label,
 .input-fill:focus ~ .input-label {
     transform: scale(0.75) translate(0, -14px);
@@ -61,16 +64,19 @@ Material Design风格占位符交互效果官方示意见此[demo](https://mater
 {
     border-color: #283282;
 }
-
+```
 ### 四、清除按钮
 1.html 部分
 input上  required是必要属性，配合CSS伪类实现我们的效果。
+```
 <code>
  <a href="javascript:" class="clear">close</a>
  </code>
+ ```
  2.CSS部分
 使用的是:valid伪类。这是CSS3中新增伪类，IE10+以及其他现代浏览器支持，表示表单合法。由于HTML中的<input>有HTML5表单验证属性required. 于是，如果文本框没有内容，则不合法；有内容，则合法，就会触发这里的:valid伪类选择器。而这里:valid伪类控制后面的清除按钮显示，于是就实现了我们想要的效果。
 啊，对了。IE11浏览器下不是所有的文本框都有黑色的叉叉吗，会跟这里的自定义清除按钮重叠，::-ms-clear { display: none; }这段代码可以去之~~
+```
  .clear{
   position:absolute;
   top:10px;
@@ -81,7 +87,7 @@ input上  required是必要属性，配合CSS伪类实现我们的效果。
 .input-fill::-ms-clear { display: none; }
 .input-fill:valid + .clear { display: inline; }
 .input-fill:not(:focus) + .clear { display: none; }
-
+```
 3.实现的优点
 此方法相比传统JS实现的好处在于，更简单了。JS的话还要侦听输入事件(input)等，比较折腾。CSS的话完全浏览器自身事件特性，显然，高效简单的多。
 
