@@ -9,7 +9,7 @@ Material Design风格占位符交互效果官方示意见此[demo](https://mater
 
 :placeholder-shown伪类目前兼容性如下：
 [兼容性链接](https://caniuse.com/#search=%3Aplaceholder-shown)
-![](./assets/images/pic1.png)
+![](../assets/images/pic1.png)
 
 兼容性还是很不错的，在移动端我们可以放心使用。因为就算一些老手机不支持，也不过是传统的placeholder占位符效果，并没有什么损失
 ### 二、placeholder-shown  优点
