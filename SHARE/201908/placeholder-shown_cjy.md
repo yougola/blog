@@ -17,12 +17,12 @@ Material Design风格占位符交互效果官方示意见此[demo](https://mater
 
 ### 三、实现原理
 拿一个输入框举例，HTML结构如下：
-<code>
+[
 <div class="input-fill-box">
     <input class="input-fill" placeholder="邮箱">
     <label class="input-label">邮箱</label>
-</div> 
-</code>
+</div>
+]
 首先，让浏览器默认的placeholder效果不可见，我们可以让颜色透明即可，如下CSS：
 
 /* 默认placeholder颜色透明不可见 */
