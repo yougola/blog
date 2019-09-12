@@ -1,24 +1,4 @@
 # Decorator 装饰器 
-
-### 基础知识
-### 关于 TC39 提案流程
-
-TC39 提案分为以下几个阶段:
-
-- Stage 0 - 设想（Strawman）：任何尚未提交为正式提案的讨论，想法，改变或对已有规范的补充建议都被认为是一个稻草人草案（“strawman” proposal），但只有TC39成员可以提出此阶段的草案。
-
-- Stage 1 - 提案（Proposal）：此阶段，稻草人草案升级为正式化的提案，并将逐步解决多部门关切的问题，如与其他提案的相互之间会有什么影响，这一草案具体该如何实施等问题。人们需要对这些问题提供具体的解决方案。stage1的提案通常还需要包括API描述，拥有说明性使用示例，并对语义和算法进行讨论，一般来说草案在这一阶段会经历巨大的变化。并初步尝试实现出来。
-
-- Stage 2 - 草案（Draft）：此阶段，草案就有了初始的规范。通过polyfill，开发者可以开始使用这一阶段的草案了，一些浏览器引擎也会逐步对这一阶段的规范的提供原生支持，此外通过使用构建工具也可以编译源代码为现有引擎可以执行的代码，这些方法都使得这一阶段的草案可以开始被使用了。完成初步规范。
-
-- Stage 3 - 候选（Candidate）：此阶段的规范就属于候选推荐规范了，这一阶段之后变化就不会那么大了，基本已经完成规范并在浏览器上初步实现。要达到这一阶段还需要满足以下条件：
-规范的编辑和指定的审阅者必须在最终规范上签字；
-用户也应该对该提议感兴趣；
-提案必须至少被一个浏览器原生支持；
-拥有高效的Polyfill，或者被Babel支持；
-
-- Stage 4 - 完成（Finished）：此阶段的提案必须有两个独立的通过验收测试的实现，进入第4阶段的提案将包含在 ECMAScript 的下一个修订版中。将添加到下一个年度版本发布中。
-
 ### Decorator 规范
 
 装饰器是一种 Js 编译时执行的函数， 可以写 成 `@ + 函数`。 可以放在类和类方法的定义前面。
@@ -248,7 +228,8 @@ obj.foo() // 'foo'
 
 2. 通过 Decorators 绑定类的方法
 
-在实际开发中 React 和 Redux 库结合使用时，常常需要写成下面这样。
+
+在实际开发中 React 和 Redux 库结合使用时，常常需要写成下面这样，用来绑定 `store` 属性到组件`MyReactComponent` 里面。
 ```js
 class MyReactComponent extends React.Component  {}
 export default connect(mapStateToProps, mapDispatchToProps) { MyReactComponent }
@@ -260,13 +241,58 @@ export default connect(mapStateToProps, mapDispatchToProps) { MyReactComponent }
 export defalut class MyReactComponent extends React.Component {}
 ```
 
+
+
 3. 使用 Decorators 实现自动发布事件，
-我们可以使用装饰器，令对象方法被调用的时候，自动发出一个事件。像之前 aoping 的无侵入埋点方案就可以利用这个特性去更方便实现。
+我们可以使用装饰器，令对象方法被调用的时候，自动发出一个事件。像之前 aoping 的无侵入埋点方案就利用这个特性去实现便利性。
+以下代码从 aoping 方案里面截取出来。
 
-
+```js
+//
+/* track by decorator
+ * class SomeComponent {
+ *     @track(before(() => console.log('hello, trackpoint')))
+ *     onClick = () => {
+ *         ...
+ *     }
+ * } */
+ 
+export const track = partical => (target, key, descriptor) => {
+  if (!isFunction(partical)) {
+    throw new Error('trackFn is not a function ' + partical)
+  }
+  const value = function (...args) {
+    return partical.call(this, descriptor.value, this).apply(this, args)
+  }
+  const res = Object.assign({}, descriptor, {
+    value
+  })
+  return res
+}
+```
 
 
 
 #### 6. Decorator 还处于[Stage-2]
 
 Decorator 现在只是处理 Stage-2 阶段，TC39委员会可能还会对此特性进行大量更改，请谨慎使用。
+
+
+### 基础知识
+### 关于 TC39 提案流程
+
+TC39 提案分为以下几个阶段:
+
+- Stage 0 - 设想（Strawman）：任何尚未提交为正式提案的讨论，想法，改变或对已有规范的补充建议都被认为是一个稻草人草案（“strawman” proposal），但只有TC39成员可以提出此阶段的草案。
+
+- Stage 1 - 提案（Proposal）：此阶段，稻草人草案升级为正式化的提案，并将逐步解决多部门关切的问题，如与其他提案的相互之间会有什么影响，这一草案具体该如何实施等问题。人们需要对这些问题提供具体的解决方案。stage1的提案通常还需要包括API描述，拥有说明性使用示例，并对语义和算法进行讨论，一般来说草案在这一阶段会经历巨大的变化。并初步尝试实现出来。
+
+- Stage 2 - 草案（Draft）：此阶段，草案就有了初始的规范。通过polyfill，开发者可以开始使用这一阶段的草案了，一些浏览器引擎也会逐步对这一阶段的规范的提供原生支持，此外通过使用构建工具也可以编译源代码为现有引擎可以执行的代码，这些方法都使得这一阶段的草案可以开始被使用了。完成初步规范。
+
+- Stage 3 - 候选（Candidate）：此阶段的规范就属于候选推荐规范了，这一阶段之后变化就不会那么大了，基本已经完成规范并在浏览器上初步实现。要达到这一阶段还需要满足以下条件：
+规范的编辑和指定的审阅者必须在最终规范上签字；
+用户也应该对该提议感兴趣；
+提案必须至少被一个浏览器原生支持；
+拥有高效的Polyfill，或者被Babel支持；
+
+- Stage 4 - 完成（Finished）：此阶段的提案必须有两个独立的通过验收测试的实现，进入第4阶段的提案将包含在 ECMAScript 的下一个修订版中。将添加到下一个年度版本发布中。
