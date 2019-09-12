@@ -287,9 +287,30 @@ export const track = partical => (target, key, descriptor) => {
 
 #### 6. Decorator 还处于[Stage-2]
 
-Timeline
+```js
+@connect(({timeline, app, flight}) => ({
+  timeline,
+  flight,
+  lang: app.languageObj.lang,
+  currency: app.currencyObj.currCode,
+  symbol: app.currencyObj.currSymbol,
+}))
+class Timeline extends Component { // 对修饰器的实验支持是一项将在将来版本中更改的功能。设置 "experimentalDecorators" 选项以删除此警告。
+   ...
+}
+```
 
-Decorator 现在只是处理 Stage-2 阶段，TC39委员会可能还会对此特性进行大量更改，请谨慎使用。
+因为 Decorator 现在只是处理 Stage-2 阶段, 其实这个特性被作用 ** Yehuda Katz** 三年前就已经提出来的了，一出来就很受欢迎瞬间被 TypeScript 支持，像 Angular 和 Mobx 一些流行的框架都有使用到，但是由于性能问题和其它作者的大量改动的原因， Decorator 一直没能推出到生产版本中，而且 TC39 委员会对此特性进行大量更改出了新版本的 Decorator，这就很悲催了，旧版本上不了线新版本还没准备好，就连 babel 也是只支持旧版本的 Decorator，新版本功能还没实现，所以请谨慎使用。
+
+在新版本 Decorator 有很多大量重量级的变化包括：
+
+- 1. 语法写法。
+- 2. 对象装饰器
+- 3. 函数参数装饰器等。
+
+请尽情期待吧。
+
+
 
 
 ### 基础知识
