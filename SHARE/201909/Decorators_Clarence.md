@@ -241,7 +241,19 @@ export default connect(mapStateToProps, mapDispatchToProps) { MyReactComponent }
 export defalut class MyReactComponent extends React.Component {}
 ```
 
-
+像我们现在 React 组件里面也利用了这个特性去绑定 store
+```js
+@connect(({timeline, app, flight}) => ({
+  timeline,
+  flight,
+  lang: app.languageObj.lang,
+  currency: app.currencyObj.currCode,
+  symbol: app.currencyObj.currSymbol,
+}))
+class Timeline extends Component {
+  ...
+}
+```
 
 3. 使用 Decorators 实现自动发布事件，
 我们可以使用装饰器，令对象方法被调用的时候，自动发出一个事件。像之前 aoping 的无侵入埋点方案就利用这个特性去实现便利性。
@@ -274,6 +286,8 @@ export const track = partical => (target, key, descriptor) => {
 
 
 #### 6. Decorator 还处于[Stage-2]
+
+Timeline
 
 Decorator 现在只是处理 Stage-2 阶段，TC39委员会可能还会对此特性进行大量更改，请谨慎使用。
 
