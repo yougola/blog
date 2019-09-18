@@ -12,11 +12,11 @@
 * Legacy RegEx
 * 私有的实例方法和访问器
 
-1. 行分隔符（U + 2028）和段分隔符（U + 2029）符号现在允许在字符串文字中，与JSON匹配
+## 1. 行分隔符（U + 2028）和段分隔符（U + 2029）符号现在允许在字符串文字中，与JSON匹配
 以前，这些符号在字符串文字中被视为行终止符，因此使用它们会导致SyntaxError异常。
-2. 更加友好的 JSON.stringify
+## 2. 更加友好的 JSON.stringify
 如果输入 Unicode 格式但是超出范围的字符，在原先JSON.stringify返回格式错误的Unicode字符串。现在实现了一个改变JSON.stringify的第3阶段提案，因此它为其输出转义序列，使其成为有效Unicode（并以UTF-8表示）
-3. 新增了Array的flat()方法和flatMap()方法
+## 3. 新增了Array的flat()方法和flatMap()方法
 flat()和flatMap()本质上就是是归纳（reduce） 与 合并（concat）的操作。
 ### Array.prototype.flat()
 flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
@@ -62,9 +62,9 @@ arr1.flatMap(x => [[x * 2]]);
 // [[2], [4], [6], [8]]
 ```
 
-4. 新增了String的trimStart()方法和trimEnd()方法
+## 4. 新增了String的trimStart()方法和trimEnd()方法
 新增的这两个方法很好理解，分别去除字符串首尾空白字符，这里就不用例子说声明了。
-5. Object.fromEntries()
+## 5. Object.fromEntries()
 Object.entries()方法的作用是返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for-in 循环也枚举原型链中的属性）。
 
 而Object.fromEntries() 则是 Object.entries() 的反转。
@@ -83,7 +83,7 @@ const arr = [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ];
 const obj = Object.fromEntries(arr);
 console.log(obj); // { 0: "a", 1: "b", 2: "c" }
 ```
-6. Symbol.prototype.description
+## 6. Symbol.prototype.description
 通过工厂函数Symbol（）创建符号时，您可以选择通过参数提供字符串作为描述：
 ```
 const sym = Symbol('The description');
@@ -97,7 +97,7 @@ assert.equal(String(sym), 'Symbol(The description)');
 assert.equal(sym.description, 'The description');
 ```
 
-7. String.prototype.matchAll
+## 7. String.prototype.matchAll
 matchAll() 方法返回一个包含所有匹配正则表达式及分组捕获结果的迭代器。 在 matchAll 出现之前，通过在循环中调用regexp.exec来获取所有匹配项信息（regexp需使用/g标志：
 ```
 const regexp = RegExp('foo*','g');
@@ -146,7 +146,7 @@ array[1];
 // ['test2', 'e', 'st2', '2', index: 5, input: 'test1test2', length: 4]
 ```
 
-8. Function.prototype.toString()现在返回精确字符，包括空格和注释
+## 8. Function.prototype.toString()现在返回精确字符，包括空格和注释
 ```
 function /* comment */ foo /* another comment */() {}
 
@@ -161,7 +161,7 @@ const bar /* comment */ = /* another comment */ () => {};
 
 console.log(bar.toString()); // () => {}
 ```
-9. 修改 catch 绑定
+## 9. 修改 catch 绑定
 在 ES10 之前，我们必须通过语法为 catch 子句绑定异常变量，无论是否有必要。很多时候 catch 块是多余的。 ES10 提案使我们能够简单的把变量省略掉。
 不算大的改动。
 
@@ -173,5 +173,5 @@ try {} catch(e) {}
 ```
 try {} catch() {}
 ```
-10. 新的基本数据类型BigInt
+## 10. 新的基本数据类型BigInt
  现在的基本数据类型（值类型）不止5种（ES6之后是六种）了哦！加上BigInt一共有七种基本数据类型，分别是： String、Number、Boolean、Null、Undefined、Symbol、BigInt
