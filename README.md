@@ -34,7 +34,7 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 ### 201908
 
 * [Babel基础知识](SHARE/201908/Babel基础知识_Clarence.md)(Clarence)
-* [CSS :placeholder-shown伪类实现Material Design占位符交互效果](SHARE/201908/placeholder-shown_cjy.md)(cjy)
+* [CSS :placeholder-shown伪类实现Material Design占位符交互效果](SHARE/cjy/placeholder-shown_cjy.md)(cjy)
 * [接口文档神器YApi](https://juejin.im/post/5d6688685188250ff779b5a9)(aoping)
 * [使用Jest对Vue进行单元测试](https://juejin.im/post/5d7085845188254d1722c17d)(sibo)
 * [js内存空间](https://github.com/950905/record-summary/blob/master/common/js%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3.md)(文生)
@@ -42,3 +42,4 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 
 ### 201909
 * [详解HTTP缓存](https://juejin.im/post/5d74870e6fb9a06b32609812)(东亮)
+* [ES10新特性（2019）](SHARE/cjy/ES10新特性_cjy.md)(cjy)
