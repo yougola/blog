@@ -45,5 +45,4 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 * [ES10新特性（2019）](SHARE/cjy/ES10新特性_cjy.md)(cjy)
 * [Decorator 装饰器](https://github.com/yougola/blog/blob/master/SHARE/201909/Decorators_Clarence.md)(Clarence)
 * [从零开始搭建前端监控系统（一）——web探针sdk](https://juejin.im/post/5d8c2ae1518825091b2c17e6)(aoping)
-* [关于路由, 我好奇的那些点]（https://www.cnblogs.com/Tiboo/p/11588022.html）
-
+* [关于路由, 我好奇的那些点](https://www.cnblogs.com/Tiboo/p/11588022.html)
