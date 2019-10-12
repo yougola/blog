@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-10-10 13:15:55
- * @LastEditTime: 2019-10-12 11:46:50
+ * @LastEditTime: 2019-10-12 11:51:10
  * @LastEditors: Please set LastEditors
  -->
 
@@ -55,5 +55,5 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 * [关于路由, 我好奇的那些点](https://www.cnblogs.com/Tiboo/p/11588022.html)
 
 ### 201910
-* [npm版本号管理策略](hhttps://github.com/yougola/blog/blob/master/SHARE/201910/NPM_Publish.md)(sibo)
+* [npm版本号管理策略](https://github.com/yougola/blog/blob/master/SHARE/201910/NPM_Publish.md)(sibo)
 * [聊一聊Promise](https://github.com/yougola/blog/blob/master/SHARE/201910/Promise.md)(文生)
