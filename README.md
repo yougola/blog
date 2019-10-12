@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-10-10 13:15:55
+ * @LastEditTime: 2019-10-12 11:46:50
+ * @LastEditors: Please set LastEditors
+ -->
 
 
 <h1 align="center">iGola的博客</h1>
@@ -46,3 +53,7 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 * [Decorator 装饰器](https://github.com/yougola/blog/blob/master/SHARE/201909/Decorators_Clarence.md)(Clarence)
 * [从零开始搭建前端监控系统（一）——web探针sdk](https://juejin.im/post/5d8c2ae1518825091b2c17e6)(aoping)
 * [关于路由, 我好奇的那些点](https://www.cnblogs.com/Tiboo/p/11588022.html)
+
+### 201910
+* [npm版本号管理策略](hhttps://github.com/yougola/blog/blob/master/SHARE/201910/NPM_Publish.md)(sibo)
+* [聊一聊Promise](https://github.com/yougola/blog/blob/master/SHARE/201910/Promise.md)(文生)
