@@ -59,3 +59,6 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 * [聊一聊Promise](https://github.com/yougola/blog/blob/master/SHARE/201910/Promise.md)(文生)
 * [九浅一深Redux](https://github.com/yougola/blog/blob/master/SHARE/201910/redux%20%E7%AE%80%E4%BB%8B/redux_Clarence.md)(Clarence)
 * [浅谈AST](https://juejin.im/post/5da6b375e51d4577e9749bc4)(东亮)
+
+### 201911
+* [使用canvas实践视频弹幕](https://github.com/yougola/blog/blob/master/SHARE/201911/Barrage_Publish.md)(sibo)
