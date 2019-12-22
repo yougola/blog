@@ -62,3 +62,9 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 
 ### 201911
 * [使用canvas实践视频弹幕](https://github.com/yougola/blog/blob/master/SHARE/201911/Barrage_Publish.md)(sibo)
+* [JavaScript的Event Loop详解](https://juejin.im/post/5d21c6d56fb9a07ea4209ffc)(东亮)
+* [【手把手系列之】实现一个简易版vue2](https://juejin.im/post/5ddf7d20e51d451f8b265c03)(aoping)
+* [一步一步实现深拷贝](https://github.com/950905/record-summary/blob/master/common/%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D.md)(文生)
+
+### 201912
+* [React性能优化指南](https://juejin.im/post/5dfada6e518825127324a799)(sibo)
