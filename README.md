@@ -68,3 +68,7 @@ iGola于 2014年创立，目标是成为全球飞行用户的智能行程优化�
 
 ### 201912
 * [React性能优化指南](https://juejin.im/post/5dfada6e518825127324a799)(sibo)
+* [JavaScript 函数式编程](https://juejin.im/post/5b4ac0d0f265da0fa959a785)(东亮)
+
+### 202001
+* [数组去重](https://juejin.im/post/5e05c8a96fb9a016470c375e)(aoping)
